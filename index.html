@@ -45,7 +45,7 @@
         }
 
         .glow-effect:hover {
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+            box-shadow: 0 0 15px rgba(107, 33, 168, 0.4);
             transform: translateY(-2px);
         }
 
@@ -55,35 +55,36 @@
     </style>
 </head>
 
-<body class="antialiased selection:bg-red-500 selection:text-white relative">
+<body class="antialiased selection:bg-purple-800 selection:text-white relative">
 
     <header
         class="fixed w-full top-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-white tracking-tighter hover:text-red-400 transition-colors">
-                DARKNMYKUP<span class="text-red-500">.</span>
+            <a href="#home"
+                class="text-2xl font-bold text-white tracking-tighter hover:text-purple-500 transition-colors">
+                DARKNMYKUP<span class="text-purple-800">.</span>
             </a>
 
             <!-- Menu Corrigido -->
             <nav class="hidden md:flex gap-6 items-center font-medium text-sm text-gray-300">
-                <a href="#home" data-i18n="nav-home" class="hover:text-red-400 transition-colors">Início</a>
-                <a href="#sobre" data-i18n="nav-about" class="hover:text-red-400 transition-colors">Sobre Mim</a>
-                <a href="#contatos" data-i18n="nav-contact" class="hover:text-red-400 transition-colors">Contatos</a>
+                <a href="#home" data-i18n="nav-home" class="hover:text-purple-500 transition-colors">Início</a>
+                <a href="#sobre" data-i18n="nav-about" class="hover:text-purple-500 transition-colors">Sobre Mim</a>
+                <a href="#contatos" data-i18n="nav-contact" class="hover:text-purple-500 transition-colors">Contatos</a>
 
                 <div class="flex gap-3 ml-4 border-l border-white/20 pl-4">
-                    <button id="theme-toggle" class="hover:text-red-400 transition-colors flex items-center gap-1"
+                    <button id="theme-toggle" class="hover:text-purple-500 transition-colors flex items-center gap-1"
                         title="Trocar Tema">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </button>
-                    <button id="lang-toggle" class="hover:text-red-400 transition-colors font-bold"
+                    <button id="lang-toggle" class="hover:text-purple-500 transition-colors font-bold"
                         title="Mudar Idioma">PT/EN</button>
                 </div>
 
                 <button onclick="openModal()"
-                    class="px-4 py-2 ml-2 rounded-full border border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white transition-all duration-300">
+                    class="px-4 py-2 ml-2 rounded-full border border-purple-800/50 text-purple-500 hover:bg-purple-800 hover:text-white transition-all duration-300">
                     Login
                 </button>
             </nav>
@@ -112,28 +113,28 @@
                 class="text-left text-gray-300 hover:text-white">Trocar Tema</button>
             <button onclick="document.getElementById('lang-toggle').click()"
                 class="text-left text-gray-300 hover:text-white">Idioma (PT/EN)</button>
-            <button onclick="openModal()" class="w-full text-left text-red-400 font-semibold py-2">Login</button>
+            <button onclick="openModal()" class="w-full text-left text-purple-500 font-semibold py-2">Login</button>
         </div>
     </header>
 
     <main>
         <section id="home" class="min-h-screen flex items-center justify-center relative pt-20 px-6">
             <div
-                class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-[100px] -z-10 pointer-events-none">
+                class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-[100px] -z-10 pointer-events-none">
             </div>
 
             <div class="max-w-4xl mx-auto text-center reveal">
-                <p class="text-red-400 font-medium mb-4 tracking-wide uppercase text-sm">Oi, Seja Bem-Vindo(a)!</p>
+                <p class="text-purple-500 font-medium mb-4 tracking-wide uppercase text-sm">Oi, Seja Bem-Vindo(a)!</p>
                 <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
                     <span data-i18n="hero-title">Criando qualquer coisa apenas por diversão com código.</span>
                 </h1>
                 <p
                     class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed typewriter-container">
-                    Sou um <span class="typewriter text-red-400 font-bold"></span>
+                    Sou um <span class="typewriter text-purple-500 font-bold"></span>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="#contatos" data-i18n="form-btn"
-                        class="px-8 py-4 bg-red-500 hover:bg-red-600 text-white rounded-full font-semibold transition-all duration-300 shadow-lg shadow-red-500/25 transform hover:-translate-y-1">
+                        class="px-8 py-4 bg-purple-800 hover:bg-purple-900 text-white rounded-full font-semibold transition-all duration-300 shadow-lg shadow-purple-800/25 transform hover:-translate-y-1">
                         Mensagem
                     </a>
                     <a href="#sobre" data-i18n="nav-about"
@@ -149,13 +150,13 @@
                 <div class="mb-16 text-center reveal">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="nav-about">Um pouco sobre mim
                     </h2>
-                    <div class="w-20 h-1 bg-red-500 mx-auto rounded-full"></div>
+                    <div class="w-20 h-1 bg-purple-800 mx-auto rounded-full"></div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12 items-center reveal">
                     <div class="relative group">
                         <div
-                            class="absolute -inset-1 bg-gradient-to-r from-red-500 to-black-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+                            class="absolute -inset-1 bg-gradient-to-r from-purple-800 to-black-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
                         </div>
                         <div
                             class="relative bg-neutral-900 aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 flex items-center justify-center">
@@ -180,11 +181,11 @@
 
                         <div class="grid grid-cols-2 gap-4 pt-4">
                             <div class="bg-neutral-900/50 p-4 rounded-xl border border-white/5">
-                                <h4 class="text-red-900-400 font-bold text-2xl mb-1 text-red-500">3 meses</h4>
+                                <h4 class="font-bold text-2xl mb-1 text-purple-800">3 meses</h4>
                                 <p class="text-sm text-gray-400">de Experiência</p>
                             </div>
                             <div class="bg-neutral-900/50 p-4 rounded-xl border border-white/5">
-                                <h4 class="text-red-900-400 font-bold text-2xl mb-1 text-red-500">2</h4>
+                                <h4 class="font-bold text-2xl mb-1 text-purple-800">2</h4>
                                 <p class="text-sm text-gray-400">Grandes projetos Em andamento</p>
                             </div>
                         </div>
@@ -197,7 +198,7 @@
             <div class="max-w-4xl mx-auto">
                 <div class="mb-16 text-center reveal">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="nav-contact">Contatos</h2>
-                    <div class="w-20 h-1 bg-red-500 mx-auto rounded-full"></div>
+                    <div class="w-20 h-1 bg-purple-800 mx-auto rounded-full"></div>
                     <p class="mt-6 text-gray-400">Sinta-se à vontade para soltar um feedback, ou qualquer tipo de
                         bullshit que você quiser</p>
                 </div>
@@ -210,25 +211,25 @@
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-2">Nome</label>
                                 <input type="text" id="name" data-i18n="form-name-placeholder"
-                                    class="w-full bg-neutral-800/50 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+                                    class="w-full bg-neutral-800/50 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-800 focus:ring-1 focus:ring-purple-800 transition-colors"
                                     placeholder="Bota teu apelido ai bro" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-2">E-mail</label>
                                 <input type="email" id="email" data-i18n="form-email-placeholder"
-                                    class="w-full bg-neutral-800/50 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+                                    class="w-full bg-neutral-800/50 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-800 focus:ring-1 focus:ring-purple-800 transition-colors"
                                     placeholder="Boa, agora bota teu email aqui blz?" required>
                             </div>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Mensagem</label>
                             <textarea id="message" rows="4" data-i18n="form-msg-placeholder"
-                                class="w-full bg-neutral-800/50 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors resize-none"
+                                class="w-full bg-neutral-800/50 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-800 focus:ring-1 focus:ring-purple-800 transition-colors resize-none"
                                 placeholder="E aqui tu bota uma mensagem" required></textarea>
                         </div>
                         <div id="form-status" class="text-center font-bold"></div>
                         <button type="submit" data-i18n="form-btn"
-                            class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1">
+                            class="w-full bg-purple-800 hover:bg-purple-900 text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1">
                             Enviar Mensagem
                         </button>
                     </form>
@@ -248,7 +249,7 @@
                             </a>
                             <!-- Instagram -->
                             <a href="https://www.instagram.com/sushitrashsya/" target="_blank"
-                                class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-red-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1 glow-effect">
+                                class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-purple-800 hover:to-purple-900 hover:text-white transition-all duration-300 transform hover:-translate-y-1 glow-effect">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="currentColor">
                                     <path
@@ -289,22 +290,23 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-400 mb-1">E-mail</label>
                     <input type="email" id="email-input"
-                        class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
+                        class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-800 focus:ring-1 focus:ring-purple-800"
                         required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-400 mb-1">Senha</label>
                     <input type="password" id="password-input"
-                        class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
+                        class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-800 focus:ring-1 focus:ring-purple-800"
                         required>
                 </div>
                 <div id="auth-error"
-                    class="text-red-400 text-sm hidden bg-red-400/10 p-3 rounded-lg border border-red-400/20"></div>
+                    class="text-purple-500 text-sm hidden bg-purple-500/10 p-3 rounded-lg border border-purple-500/20">
+                </div>
                 <div id="auth-success"
                     class="text-green-400 text-sm hidden bg-green-400/10 p-3 rounded-lg border border-green-400/20">
                     Login realizado com sucesso! Redirecionando...</div>
                 <button type="submit" id="login-btn"
-                    class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-lg transition-all mt-4 flex items-center justify-center gap-2">
+                    class="w-full bg-purple-800 hover:bg-purple-900 text-white font-bold py-3 rounded-lg transition-all mt-4 flex items-center justify-center gap-2">
                     <span>Entrar</span>
                 </button>
                 <div class="mt-4 flex items-center gap-2 text-sm text-gray-500">
