@@ -272,3 +272,42 @@ p {
   background-color: var(--accent-hover);
   animation: glow 1.5s infinite alternate;
 }
+
+body.light-theme {
+  --bg-color: #f3f4f6;
+  --surface-color: #ffffff;
+  --text-main: #374151;
+  --text-highlight: #111827;
+  background-color: var(--bg-color) !important;
+  color: var(--text-main) !important;
+}
+
+body.light-theme .bg-\[\#0a0a0a\]\/80,
+body.light-theme .bg-\[\#121212\],
+body.light-theme .bg-neutral-900,
+body.light-theme .bg-neutral-900\/50,
+body.light-theme .bg-neutral-800,
+body.light-theme .bg-neutral-800\/50 {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .text-white {
+  color: #111827 !important;
+}
+
+body.light-theme .text-gray-300,
+body.light-theme .text-gray-400,
+body.light-theme .text-gray-500 {
+  color: #4b5563 !important;
+}
+
+body.light-theme .border-white\/10,
+body.light-theme .border-neutral-700 {
+  border-color: #d1d5db !important;
+}
+
+body.light-theme .modal-overlay {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
