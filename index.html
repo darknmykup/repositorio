@@ -68,12 +68,15 @@
             </a>
 
             <nav class="hidden md:flex gap-8 items-center font-medium text-sm text-gray-300">
-                <a href="#home" class="hover:text-red-400 transition-colors">Início</a>
-                <a href="#sobre" class="hover:text-red-400 transition-colors">Sobre Mim</a>
-                <a href="#contatos" class="hover:text-red-400 transition-colors">Contatos</a>
-                <button onclick="openModal()"
-                    class="px-4 py-2 rounded-full border border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white transition-all duration-300">
-                    Login
+                <a href="#home" data-i18n="nav-home" class="hover:text-red-400 transition-colors">Início</a>
+                <a href="#sobre" data-i18n="nav-about" class="hover:text-red-400 transition-colors">Sobre Mim</a>
+                <a href="#contatos" data-i18n="nav-about" class="hover:text-red-400 transition-colors">Contatos</a>
+                <button onclick="openModal()"> </button>
+                <button id="theme-toggle">Trocar Tema</button>
+                <button id="lang-toggle">PT / EN</button>
+                class="px-4 py-2 rounded-full border border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white
+                transition-all duration-300">
+                Login
                 </button>
             </nav>
 
@@ -196,7 +199,9 @@
                                 <label class="block text-sm font-medium text-gray-400 mb-2">Nome</label>
                                 <input type="text"
                                     class="w-full bg-neutral-800/50 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
-                                    placeholder="Bota teu apelido ai bro" required>
+                                    input type="text" id="name" data-i18n="form-name-placeholder"
+                                    placeholder="Bota teu apelido ai bro" placeholder="Bota teu apelido ai bro"
+                                    required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-2">E-mail</label>
@@ -272,7 +277,8 @@
             <div class="text-center mb-8">
                 <h3 class="text-2xl font-bold text-white mb-2">Login</h3>
                 <p class="text-gray-400 text-sm">Faça login (AVISO PRÉVIO)<br>ESSA ÁREA (Login) ESTÁ EM DESENVOLVIMENTO.
-                    <br> Por enquanto, fique como visitante :P (Recomendado)</p>
+                    <br> Por enquanto, fique como visitante :P (Recomendado)
+                </p>
             </div>
 
 
@@ -488,8 +494,7 @@
             });
         });
     </script>
-    <script src="script.js">
-    </script>
+    <script src="script.js"> </script>
 </body>
 
 </html>

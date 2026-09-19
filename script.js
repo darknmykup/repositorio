@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggle.classList.toggle('open');
     });
 
-    // Fecha o menu ao clicar em qualquer item de navegação
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -19,47 +17,124 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  // TEMA CLARO / ESCURO
+
   const themeToggleBtn = document.getElementById('theme-toggle');
-  const savedTheme = localStorage.getItem('theme');
 
-
-  if (savedTheme) {
-    document.body.classList.add(savedTheme);
-  }
+  // Verifica se o usuário já salvou um tema, se não, usa o escuro por padrão
+  const currentTheme = localStorage.getItem('theme') || 'dark-theme';
+  document.body.classList.add(currentTheme);
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-      const isDark = document.body.classList.contains('dark-theme');
-      localStorage.setItem('theme', isDark ? 'dark-theme' : 'light-theme');
+      if (document.body.classList.contains('dark-theme')) {
+        document.body.classList.replace('dark-theme', 'light-theme');
+        localStorage.setItem('theme', 'light-theme');
+      } else {
+        if (document.body.classList.contains('light-theme')) {
+          document.body.classList.replace('light-theme', 'dark-theme');
+        } else {
+          document.body.classList.add('dark-theme');
+        }
+        localStorage.setItem('theme', 'dark-theme');
+      }
     });
   }
 
+  // SISTEMA DE IDIOMAS (PT / EN)
+
+  const translations = {
+    pt: {
+      'nav-home': 'Início',
+      'nav-about': 'Sobre Mim',
+      'nav-contact': 'Contatos',
+      'hero-title': 'Criando qualquer coisa apenas por diversão com código.',
+      'form-name-placeholder': 'Bota teu apelido ai bro',
+      'form-email-placeholder': 'Boa, agora bota teu email aqui blz?',
+      'form-msg-placeholder': 'E aqui tu bota uma mensagem',
+      'form-btn': 'Enviar Mensagem',
+      'form-success': 'Mensagem enviada com sucesso! Em breve entrarei em contato.',
+      'form-error': 'Por favor, preencha todos os campos.',
+      'typewriter-words': ['Desenvolvedor Web', 'Rookie Front-end', 'Criador de Soluções']
+    },
+    en: {
+      'nav-home': 'Home',
+      'nav-about': 'About Me',
+      'nav-contact': 'Contact',
+      'hero-title': 'Creating anything just for fun with code.',
+      'form-name-placeholder': 'Put your nickname here bro',
+      'form-email-placeholder': 'Cool, now drop your email alright?',
+      'form-msg-placeholder': 'And here you drop a message',
+      'form-btn': 'Send Message',
+      'form-success': 'Message sent successfully! I will be in touch soon.',
+      'form-error': 'Please fill in all fields.',
+      'typewriter-words': ['Web Developer', 'Front-end Rookie', 'Solution Creator']
+    }
+  };
+
+  const langToggleBtn = document.getElementById('lang-toggle');
+  let currentLang = localStorage.getItem('language') || 'pt';
+
+
+  let typewriterWords = translations[currentLang]['typewriter-words'];
+
+  function applyLanguage(lang) {
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+
+      if (translations[lang] && translations[lang][key]) {
+
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = translations[lang][key];
+        } else {
+
+          el.textContent = translations[lang][key];
+        }
+      }
+    });
+
+
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    localStorage.setItem('language', lang);
+
+
+    typewriterWords = translations[lang]['typewriter-words'];
+  }
+
+
+  applyLanguage(currentLang);
+
+  if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      applyLanguage(currentLang);
+    });
+  }
+
+
   const typewriterElement = document.querySelector('.typewriter');
   if (typewriterElement) {
-
-    const wordsAttr = typewriterElement.getAttribute('data-words');
-    const words = wordsAttr
-      ? JSON.parse(wordsAttr)
-      : ['Desenvolvedor Web', 'Frontend Developer', 'Criador de Soluções'];
-
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
 
     const typeEffect = () => {
-      const currentWord = words[wordIndex];
+
+      if (wordIndex >= typewriterWords.length) wordIndex = 0;
+
+      const currentWord = typewriterWords[wordIndex];
       const currentChar = currentWord.substring(0, charIndex);
       typewriterElement.textContent = currentChar;
 
       let typeSpeed = isDeleting ? 50 : 100;
 
       if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = 2000; // Tempo parado na palavra completa
+        typeSpeed = 2000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
+        wordIndex = (wordIndex + 1) % typewriterWords.length;
         typeSpeed = 500;
       }
 
@@ -70,10 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     typeEffect();
   }
 
-  const observerOptions = {
-    threshold: 0.15
-  };
-
+  const observerOptions = { threshold: 0.15 };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -97,12 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
 
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
@@ -125,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -137,14 +208,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!nameInput?.value.trim() || !emailInput?.value.trim() || !messageInput?.value.trim()) {
         if (formStatus) {
-          formStatus.textContent = 'Por favor, preencha todos os campos.';
+          // Usa a mensagem de erro traduzida
+          formStatus.textContent = translations[currentLang]['form-error'];
           formStatus.style.color = '#e74c3c';
         }
         return;
       }
 
       if (formStatus) {
-        formStatus.textContent = 'Mensagem enviada com sucesso! Em breve entrarei em contato.';
+        // Usa a mensagem de sucesso traduzida
+        formStatus.textContent = translations[currentLang]['form-success'];
         formStatus.style.color = '#2ecc71';
       }
 
