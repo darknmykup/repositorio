@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
       'form-email-placeholder': 'Boa, agora bota teu email aqui blz?',
       'form-msg-placeholder': 'E aqui tu bota uma mensagem',
       'form-btn': 'Enviar Mensagem',
-      'form-success': 'Mensagem enviada com sucesso! Em breve entrarei em contato.',
+      'form-success': 'Mensagem enviada com sucesso broski, Em breve falo com você (ou não kkkkkkkkk).',
       'form-error': 'Por favor, preencha todos os campos.',
-      'typewriter-words': ['Desenvolvedor Web', 'Rookie Front-end', 'Criador de Soluções']
+      'typewriter-words': ['Desenvolvedor Web', 'Rookie Front-end', '+10000 de aura']
     },
     en: {
       'nav-home': 'Home',
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'form-email-placeholder': 'Cool, now drop your email alright?',
       'form-msg-placeholder': 'And here you drop a message',
       'form-btn': 'Send Message',
-      'form-success': 'Message sent successfully! I will be in touch soon.',
+      'form-success': 'Message sent broski, now you need to wait for your answear.(or maybe nah).',
       'form-error': 'Please fill in all fields.',
       'typewriter-words': ['Web Developer', 'Front-end Rookie', 'Solution Creator']
     }
