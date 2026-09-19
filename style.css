@@ -1,6 +1,3 @@
-/* ==========================================================================
-   VARIÁVEIS (Paleta de Cores e Configurações)
-   ========================================================================== */
 :root {
   --bg-color: #0b0c10;
   --surface-color: #1f2833;
@@ -36,6 +33,7 @@ body {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -43,9 +41,17 @@ body {
 }
 
 @keyframes glow {
-  0% { box-shadow: 0 0 5px var(--accent-color); }
-  50% { box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
-  100% { box-shadow: 0 0 5px var(--accent-color); }
+  0% {
+    box-shadow: 0 0 5px var(--accent-color);
+  }
+
+  50% {
+    box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+  }
+
+  100% {
+    box-shadow: 0 0 5px var(--accent-color);
+  }
 }
 
 
@@ -69,7 +75,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background: rgba(11, 12, 16, 0.8);
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
   z-index: 1000;
   transition: all var(--transition-speed) ease;
 }
@@ -120,8 +126,9 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--text-highlight);
   margin-bottom: 20px;
 }
@@ -132,7 +139,7 @@ h1 {
 }
 
 h1 span {
-  color: var(--accent-color); /* Destaque no nome */
+  color: var(--accent-color);
 }
 
 p {
@@ -159,7 +166,7 @@ p {
   background-color: var(--accent-color);
   color: var(--bg-color);
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(102, 252, 241, 0.3); 
+  box-shadow: 0 10px 20px rgba(102, 252, 241, 0.3);
 }
 
 .social-links {
@@ -185,7 +192,7 @@ p {
 .social-links a:hover {
   background-color: var(--accent-color);
   color: var(--bg-color);
-  transform: rotate(360deg) scale(1.1); 
+  transform: rotate(360deg) scale(1.1);
   box-shadow: 0 0 15px var(--accent-color);
 }
 
@@ -193,7 +200,7 @@ p {
   background-color: var(--surface-color);
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
@@ -201,7 +208,7 @@ p {
 }
 
 .login-container:hover {
-  transform: translateY(-10px); 
+  transform: translateY(-10px);
 }
 
 .input-group {
@@ -224,7 +231,7 @@ p {
 
 .input-group input:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
 }
 
 .input-group label {
@@ -237,8 +244,9 @@ p {
   transition: all 0.3s ease;
 }
 
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
+
+.input-group input:focus+label,
+.input-group input:not(:placeholder-shown)+label {
   top: -10px;
   left: 10px;
   font-size: 0.8rem;
